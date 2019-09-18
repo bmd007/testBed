@@ -1,4 +1,4 @@
-package ir.tiroon.stomp;
+package ir.tiroon.android.stomp.client;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("ir.tiroon.dummy_amqp_mvvm", appContext.getPackageName());
+        assertEquals("ir.tiroon.android.stomp.client", appContext.getPackageName());
     }
 }

@@ -1,9 +1,10 @@
-package ir.tiroon.android.client.stomp.modelview;
+package ir.tiroon.android.stomp.client.modelview;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import ir.tiroon.android.client.stomp.repository.EchoMessageRepository;
+
+import ir.tiroon.android.stomp.client.repository.EchoMessageRepository;
 
 public class MainActivityUserViewModel extends ViewModel {
 
@@ -21,4 +22,5 @@ public class MainActivityUserViewModel extends ViewModel {
     }
 
 }
+
 

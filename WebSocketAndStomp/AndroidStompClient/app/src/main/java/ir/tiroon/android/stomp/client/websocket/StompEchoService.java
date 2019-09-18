@@ -1,4 +1,4 @@
-package ir.tiroon.android.client.stomp.websocket;
+package ir.tiroon.android.stomp.client.websocket;
 
 import android.os.Build;
 

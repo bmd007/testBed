@@ -1,10 +1,10 @@
-package ir.tiroon.android.client.stomp.view;
+package ir.tiroon.android.stomp.client.view;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ir.tiroon.android.client.stomp.R;
+import ir.tiroon.android.stomp.client.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package ir.tiroon.android.client.stomp.repository;
+package ir.tiroon.android.stomp.client.repository;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

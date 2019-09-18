@@ -1,4 +1,4 @@
-package ir.tiroon.stomp;
+package ir.tiroon.android.stomp.client;
 
 import org.junit.Test;
 

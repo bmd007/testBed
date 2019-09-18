@@ -1,4 +1,4 @@
-package ir.tiroon.android.client.stomp.view;
+package ir.tiroon.android.stomp.client.view;
 
 import android.os.AsyncTask;
 import android.os.Build;
@@ -17,10 +17,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ir.tiroon.android.client.stomp.R;
-import ir.tiroon.android.client.stomp.modelview.MainActivityUserViewModel;
-import ir.tiroon.android.client.stomp.websocket.SimpleWebSocketEchoService;
-import ir.tiroon.android.client.stomp.websocket.StompEchoService;
+import ir.tiroon.android.stomp.client.R;
+import ir.tiroon.android.stomp.client.modelview.MainActivityUserViewModel;
+import ir.tiroon.android.stomp.client.websocket.SimpleWebSocketEchoService;
+import ir.tiroon.android.stomp.client.websocket.StompEchoService;
 
 public class MainFragment extends Fragment {
 
