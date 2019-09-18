@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+
+group = 'ir.tiroon.notes'
+version = '0.0.1'
+sourceCompatibility = 11
+
+ext {
+    snippetsDir = file("build/generated-snippets")
+    set('springCloudVersion', 'Greenwich.SR2')
+}
+
+wrapper {
+    gradleVersion = "5.6"
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-websocket'
+    compile group: 'org.joinfaces', name: 'jsf-spring-boot-starter', version: '4.0.8'
+    compile group: 'org.primefaces', name: 'primefaces', version: '7.0'
+
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-parameter-names', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.9.4'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.4'
+
+    compile 'com.h2database:h2'
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+    compile('org.codehaus.groovy:groovy')
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}

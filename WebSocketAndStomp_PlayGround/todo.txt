@@ -1,0 +1,6 @@
+-create a flutter client
+-connect the backend to user service oauth
+-make clients use oauth tokens instead of baisc auth user/pass
+-make the backend use activeMQ
+-make the clients work with activeMQ (should be no difference)
+-make clients authenticate against activeMQ as well (if needed) (by connecting activeMQ to oauth service)

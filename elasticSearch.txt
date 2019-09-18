@@ -1,0 +1,64 @@
+ELastic
+->index
+->shardin
+->Mapping
+-->Meta Fields (Optional)(like _parent)
+-->Regular document fields (or properties)
+---->data type {simple data type(like text, date, long, int, ...), Composite data types (object, nested(for arrays)), 
+	Specialized data type (geo_point, geo_shape), Range data types)
+
+/*
+Cannot stress it enough, choosing the proper data type for the fields (properties) of your documents is a key for fast, effective search which delivers really relevant results. There is one catch though: the fields in each mapping type are not entirely independent of each other. The fields with the same name and within the same index but in different mapping types must have the same mapping definition. The reason is that internally those fields are mapped to the same field.
+*/
+
+sample of mapping:
+{
+  "mappings": {
+    "books": {
+      "_source" : {
+        "enabled": true
+      },
+      "properties": {
+        "title": { "type": "text" },
+        "categories" : {
+          "type": "nested",
+          "properties" : {
+            "name": { "type": "text" }
+          }
+        },
+        "publisher": { "type": "keyword" },
+        "description": { "type": "text" },
+        "published_date": { "type": "date" },
+        "isbn": { "type": "keyword" },
+        "rating": { "type": "byte" }
+       }
+   },
+   "authors": {
+     "properties": {
+       "first_name": { "type": "keyword" },
+       "last_name": { "type": "keyword" }
+     },
+     "_parent": {
+        "type": "books"
+      }
+    }
+  }
+}
+
+ElasticSearch also support dynamix mapping.
+
+Another important detail to mention is that each mapping type can have custom metadata associated with it by using special _meta property. It is exceptionally useful technique which will be used by us later on in the tutorial.
+
+
+I18 solution for partialy translated pages:
+"title": {
+  "type": "text",
+  "fields": {
+    "en": { "type": "text", "analyzer": "english" },
+    "fr": { "type": "text", "analyzer": "french" },
+    "de": { "type": "text", "analyzer": "german" },
+    ...
+  }
+}
+ 
+

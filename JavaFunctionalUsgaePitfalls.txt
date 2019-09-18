@@ -1,0 +1,36 @@
+
+1- Long lanmda including try catch if ..... => use mthods and separate concerns 
+2- Returning a stream => use functions like collect
+	2.5- Do NOT use a straem (at least java streams) more than once
+3- Not consuming streams => use subscribe, forEach , ...
+	But do not use PEAK function in production 
+4- Use mutable objects => use immutable objects
+		example: use "Object withName(String name)" instead of "void setName(String name)"
+5- Wrong order of operation => check and check and unit test
+
+6- infinite steams => they are mostly unnecessary 
+
+7- Optinal<T> opt = null (or something which could be null as use case of optional) =>
+		
+
+	7.5- also some thing like below is wrong:
+
+		var maybeString = Optional.of("BMD");
+		var foo = maybeString
+			  .map(this::runIfExists)
+			   .orElse(this::runIfEmpty);
+		System.out.println("foo");
+		
+		//In this code, both run functions will be executed
+		
+		//So use:
+		var maybeString = Optional.of("BMD");
+		var foo = maybeString
+			  .map(this::runIfExists)
+			   .orElseGet(this::runIfEmpty);
+		System.out.println("foo");
+
+
+		//So use 
+			orElse(X) to specify default value without any side effect
+			orElseGet(X) to execute an alternative flow
