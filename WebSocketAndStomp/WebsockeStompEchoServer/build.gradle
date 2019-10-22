@@ -7,10 +7,7 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven { url "https://repo.spring.io/snapshot" }
-    maven { url "https://repo.spring.io/milestone" }
 }
-
 
 group = 'ir.tiroon.notes'
 version = '0.0.1'
